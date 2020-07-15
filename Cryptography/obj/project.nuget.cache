@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SOSGsPwAHLQkWTA/SIW2Se+GJpfZlmlNXgUXEoqQU1m9zZaxIfXllgClE4ZveeJhwjDjUltkkoBbu0OH/zVBVA==",
+  "dgSpecHash": "zkaqDQmyXG3OJJWsiH/R6AseXY6gh9xnVzbL6tzmM4s8Bi7XtelUXLvh9fxWra/JG/doWXqzedp9jjCecgdfDg==",
   "success": true,
   "projectFilePath": "C:\\Users\\DEBUG\\Documents\\Projects\\Visual Studio 2019\\C#\\Cryptography\\Cryptography\\Cryptography.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\DEBUG\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
-    "C:\\Users\\DEBUG\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\DEBUG\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+    "C:\\Users\\DEBUG\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }
