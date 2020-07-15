@@ -4,72 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Cryptographic
+namespace Cryptographic.RandomJumpMap
 {
     /// <summary>
     /// 
     /// </summary>
     public static class Manager
     {
-        private static Dictionary<string, Map> Maps;
-
-        private static string MapsPath = "RandomJumpMapCollection\\Maps";
-
-        /// <summary>
-        /// Save all jump maps in collection on server's file
-        /// </summary>
-        private static void saveJumpMapsCollection() 
-        {
-            if (Maps == null)
-                return;
-
-            var serialized = JsonConvert.SerializeObject(Maps);
-
-            try
-            {
-                ServerDirectory.Directories.createDirectory(MapsPath.Replace("\\Maps", ""));
-                ServerDirectory.Files.writeText(MapsPath, serialized);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error when save jump maps table, ({ex.Message})");
-            }
-        }
-
-        /// <summary>
-        /// Load saved jump maps on server's file
-        /// </summary>
-        private static void loadJumpMapsCollectionFromFile() 
-        {
-            if (Maps == null)
-            {
-                if (ServerDirectory.Files.fileExist(MapsPath))
-                {
-                    try
-                    {
-                        var readed = ServerDirectory.Files.readText(MapsPath);
-                        var desirialized = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Map>>(readed);
-
-                        Maps = desirialized;
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception($"Error ocurred when read collection file ({ex.Message})");
-                    }
-                }
-                else
-                    Maps = new Dictionary<string, Map>();
-            }
-        }
+        private static Dictionary<string, JumpMap> Maps;
 
         private static void generateJumpMap(string mapKey) 
         {
-            loadJumpMapsCollectionFromFile();
+            if (Maps == null)
+                Maps = new Dictionary<string, JumpMap>();
 
             if (!Maps.ContainsKey(mapKey))
-                Maps.Add(mapKey, Map.createNewRandomMap());
-
-            saveJumpMapsCollection();
+                Maps.Add(mapKey, JumpMap.createNewRandomMap());
         }
 
         /// <summary>
@@ -78,9 +28,9 @@ namespace Cryptographic
         /// <param name="text"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        private static string getMapKey(string text, int charPosition, string password) 
+        private static string getMapKey(int length, int charPosition, string password) 
         {
-            if (string.IsNullOrEmpty(text))
+            if (length < 0)
                 throw new Exception("Text is empty or null!");
 
             if (string.IsNullOrEmpty(password))
@@ -89,10 +39,8 @@ namespace Cryptographic
             if (charPosition < 0)
                 throw new Exception("Invalid char position!");
 
-            var len = text.Length;
-
-            var mapKey = $"{len}-{charPosition}-{password}";
-            mapKey = Base64.convertToBase64(mapKey);
+            var mapKey = $"{length}-{charPosition}-{password}";
+            mapKey = Base64.crypt(mapKey);
 
             generateJumpMap(mapKey);
 
@@ -105,12 +53,15 @@ namespace Cryptographic
         /// <param name="data"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        private static char getJumpChar(string mapKey, char fromChar) 
+        private static int getJumpChar(string mapKey, int fromChar) 
         {
             if (!Maps.ContainsKey(mapKey))
                 throw new Exception("Map not found!");
 
-            return Maps[mapKey].Jump[fromChar];
+            if (!Maps.ContainsKey(mapKey))
+                Maps.Add(mapKey, JumpMap.createNewRandomMap());
+
+            return Maps[mapKey].Jumps[fromChar];
         }
 
         /// <summary>
@@ -119,7 +70,7 @@ namespace Cryptographic
         /// <param name="data"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        private static char getReverseJumpChar(string mapKey, char toChar)
+        private static int getReverseJumpChar(string mapKey, int toChar)
         {
             if (!Maps.ContainsKey(mapKey))
                 throw new Exception("Map not found!");
@@ -140,9 +91,12 @@ namespace Cryptographic
 
             for (int i = 0; i < charArray.Length; i++)
             {
-                var mapKey = getMapKey(text, i, password);
-                crypted += getJumpChar(mapKey, charArray[i]);
+                var mapKey = getMapKey(text.Length, i, password);
+
+                crypted += getJumpChar(mapKey, charArray[i]) + (i == (charArray.Length - 1) ? ("") : ("x"));
             }
+
+            crypted = Base64.crypt(crypted);
 
             return crypted;
         }
@@ -155,13 +109,15 @@ namespace Cryptographic
         /// <returns></returns>
         public static string decrypt(string text, string password)
         {
-            var decrypted = "";
-            var charArray = text.ToCharArray();
+            var decrypted = "";          
+            text = Base64.decrypt(text);
+            var charArray = text.Split('x').Select(i => int.Parse(i)).ToArray();
 
             for (int i = 0; i < charArray.Length; i++)
             {
-                var mapKey = getMapKey(text, i, password);
-                decrypted += getReverseJumpChar(mapKey, charArray[i]);
+                var mapKey = getMapKey(charArray.Length, i, password);
+
+                decrypted += (char)getReverseJumpChar(mapKey, charArray[i]);
             }
 
             return decrypted;
