@@ -8,7 +8,6 @@ C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bi
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\UnitTest.runtimeconfig.dev.json
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\UnitTest.dll
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\UnitTest.pdb
-C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Dapper.dll
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Cryptography.dll
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Cryptography.pdb
