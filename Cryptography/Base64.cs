@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cryptographic
+namespace Cryptography
 {
     /// <summary>
     /// <DEVELOPER> Anderson Simioni </DEVELOPER>

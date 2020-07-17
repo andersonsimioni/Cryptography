@@ -1,5 +1,6 @@
 ﻿using System;
-using Cryptographic;
+using System.Threading;
+using Cryptography;
 
 namespace UnitTest
 {
@@ -18,7 +19,7 @@ namespace UnitTest
             Console.WriteLine("-> RandomJumpMap <-");
 
             var saveStringAux = "";
-            var manager = Cryptographic.RandomJumpMap.Manager.create(
+            var manager = Cryptography.RandomJumpMap.Manager.create(
                 //save method
                 (data) => 
                 {
@@ -44,13 +45,29 @@ namespace UnitTest
 
         static void testRandomKeyMap() 
         {
-            Console.WriteLine("-> RandomJumpMap <-");
+            Console.WriteLine("-> RandomKeyMap <-");
+            var saveStringAux = "";
+            var manager = Cryptography.RandomKey.Manager.create(
+                //save method
+                (data) =>
+                {
+                    saveStringAux = data;
+                    return true;
+                },
+                //load mehtod
+                () =>
+                {
+                    return saveStringAux;
+                });
+
             var data = "Hellow world";
-            var cryptedData = "";
-            var decryptedData = "";
+            var password = "123";
+            var cryptedData = manager.crypt(data, DateTime.Now.AddDays(1), password);
+            
+            var decryptedData = manager.decrypt(cryptedData, password);
 
             Console.WriteLine($"    '{data}' = {cryptedData}");
-            Console.WriteLine($"    {cryptedData} = '{decryptedData}'");
+            Console.WriteLine($"    {cryptedData} = '{decryptedData.data}'");
             Console.WriteLine("___________________\n\n\n");
         }
 

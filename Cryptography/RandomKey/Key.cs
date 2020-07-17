@@ -1,4 +1,4 @@
-﻿using Cryptographic;
+﻿using Cryptography;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Cryptography.RandomKey
 {
     /// <summary>
-    /// <DEVELOPER> Anderson Simioni </DEVELOPER>
+    /// <DEVELOPER> [Anderson Simioni 15/07/2020] </DEVELOPER>
     /// Random map key that will be a random name 
     /// generated and store values.
     /// </summary>
@@ -28,6 +28,12 @@ namespace Cryptography.RandomKey
         [JsonProperty("ExpirationDate")]
         private readonly DateTime ExpirationDate;
 
+        //Simple getter
+        public string getName() 
+        {
+            return Name;
+        }
+
         /// <summary>
         /// Try acess key data with password
         /// </summary>
@@ -39,9 +45,9 @@ namespace Cryptography.RandomKey
                 string.IsNullOrEmpty(this.Password) || 
                 (this.Password == Base64.crypt(password));
 
-            var expired = ExpirationDate == null;
-            if (expired == false)
-                expired = (ExpirationDate - DateTime.Now).TotalSeconds <= 0;
+            if (ExpirationDate != null)
+                if ((ExpirationDate - DateTime.Now).TotalSeconds <= 0)
+                    return (false, "Expired");
 
             if (accessAccepted) 
             {
@@ -55,20 +61,23 @@ namespace Cryptography.RandomKey
         /// <summary>
         /// Create new random name, it not exist on names list
         /// </summary>
-        /// <param name="len"></param>
+        /// <param name="length"></param>
         /// <param name="existingNames"></param>
         /// <returns></returns>
-        private static string getNewRandomName(int len, string[] existingNames) 
+        private static string getNewRandomName(int length, params string[] existingNames) 
         {
+            if (length <= 0)
+                throw new Exception("Invalid length");
+
             var newName = string.Empty;
             var randomGen = new Random(DateTime.Now.Millisecond);
 
-            while (newName == string .Empty || existingNames.Contains(newName))
+            while (newName == string.Empty || existingNames.Contains(newName))
             {
                 newName = "";
 
-                for (int i = 0; i < len; i++)
-                    newName += (int)((char)randomGen.Next(char.MinValue, char.MaxValue)) + (i == len - 1 ? "" : "x");
+                for (int i = 0; i < length; i++)
+                    newName += (int)((char)randomGen.Next(char.MinValue, char.MaxValue)) + (i == length - 1 ? "" : "x");
 
                 newName = Base64.crypt(newName);
             }
