@@ -11,7 +11,7 @@ namespace Cryptography.RandomKey
     /// Random map key that will be a random name 
     /// generated and store values.
     /// </summary>
-    class Key
+    public class Key
     {
         [JsonProperty("Name")]
         private readonly string Name;
@@ -32,6 +32,26 @@ namespace Cryptography.RandomKey
         public string getName() 
         {
             return Name;
+        }
+
+        public string getCryptPassword() 
+        {
+            return Password;
+        }
+
+        public string getCryptData() 
+        {
+            return Data;
+        }
+
+        public DateTime getRegisterDate() 
+        {
+            return RegisterDate;
+        }
+
+        public DateTime getExpDate() 
+        {
+            return ExpirationDate;
         }
 
         /// <summary>
@@ -104,7 +124,7 @@ namespace Cryptography.RandomKey
         }
 
         [JsonConstructor]
-        private Key(string Name, string Password, string Data, DateTime RegisterDate, DateTime ExpirationDate) 
+        public Key(string Name, string Password, string Data, DateTime RegisterDate, DateTime ExpirationDate) 
         {
             if (string.IsNullOrEmpty(Name))
                 throw new Exception("Name is empty or null!");

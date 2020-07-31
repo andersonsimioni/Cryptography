@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AzayT7+1uTzBDe542No55zRiM+o7s3EeN0Y136X9YghvOBh4wy66R9GafMNHBlMfUcsmmnwP0nheDJyQU7B1Fg==",
+  "dgSpecHash": "v7dN49rmzfC+LfBfeuUxV71oRU5gLYtUkVEqXCGzDritBBsdrdPtBy6UQJxzAF4UUZqH6hsEfcB29KanwIMKMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\DEBUG\\Documents\\Projects\\Visual Studio 2019\\C#\\Cryptography\\UnitTest\\UnitTest.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\DEBUG\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

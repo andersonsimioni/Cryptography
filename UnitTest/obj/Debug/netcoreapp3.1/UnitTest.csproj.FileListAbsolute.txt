@@ -9,9 +9,10 @@ C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bi
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\UnitTest.dll
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\UnitTest.pdb
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Cryptography.dll
-C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Cryptography.pdb
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.csproj.CopyComplete
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.dll
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.pdb
 C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.genruntimeconfig.cache
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Cryptography.NET.dll
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Cryptography.NET.pdb
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.xml

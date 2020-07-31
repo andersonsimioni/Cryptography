@@ -71,13 +71,29 @@ namespace UnitTest
             Console.WriteLine("___________________\n\n\n");
         }
 
+        static void testRandomJumpMapWithSeed() 
+        {
+            Console.WriteLine("-> RandomJumpMapWithSeed <-");
+            var manager = Cryptography.RandomJumpWithSeed.Manager.Create("H.S.A bots 2020");
+
+            var data = "Hellow world";
+            var password = "123";
+            var cryptedData = manager.Crypt(data, password);
+            var decryptedData = manager.Decrypt(cryptedData, "444");
+
+            Console.WriteLine($"    '{data}' = {cryptedData}");
+            Console.WriteLine($"    {cryptedData} = '{decryptedData}'");
+            Console.WriteLine("___________________\n\n\n");
+        }
+
         static void Main(string[] args)
         {
             Console.Title = ("---UNIT TEST---");
 
-            testBase64();
-            testRandomJumpMap();
-            testRandomKeyMap();
+           // testBase64();
+           // testRandomJumpMap();
+           // testRandomKeyMap();
+            testRandomJumpMapWithSeed();
 
             Console.ReadLine();
         }

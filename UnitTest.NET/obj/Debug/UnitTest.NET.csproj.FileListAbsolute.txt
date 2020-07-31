@@ -1,0 +1,12 @@
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\bin\Debug\UnitTest.NET.exe.config
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\bin\Debug\UnitTest.NET.exe
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\bin\Debug\UnitTest.NET.pdb
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\bin\Debug\Cryptography.NET.dll
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\bin\Debug\Cryptography.NET.pdb
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\obj\Debug\UnitTest.NET.csprojAssemblyReference.cache
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\obj\Debug\UnitTest.NET.csproj.CoreCompileInputs.cache
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\obj\Debug\UnitTest.NET.csproj.CopyComplete
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\obj\Debug\UnitTest.NET.exe
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\UnitTest.NET\obj\Debug\UnitTest.NET.pdb

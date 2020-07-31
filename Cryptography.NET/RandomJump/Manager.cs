@@ -18,6 +18,7 @@ namespace Cryptography.RandomJumpMap
         private Dictionary<string, JumpMap> Maps;
         private readonly Func<string, bool> Save;
         private readonly Func<string> Load;
+        private bool Modified = false;
 
         /// <summary>
         /// Execute save function if not null
@@ -78,15 +79,8 @@ namespace Cryptography.RandomJumpMap
             if (!Maps.ContainsKey(mapKey))
             {
                 Maps.Add(mapKey, JumpMap.createNewRandomMap());
-
-                if (Save != null) 
-                {
-                    var json = JsonConvert.SerializeObject(Maps);
-                    var cryptedJson = Base64.crypt(json, 2);
-
-                    Save(cryptedJson);
-                }
-            }
+                Modified = true;
+            }  
         }
 
         /// <summary>
@@ -166,6 +160,12 @@ namespace Cryptography.RandomJumpMap
 
             crypted = Base64.crypt(crypted);
 
+            if (Modified)
+            {
+                callSaveMethod();
+                Modified = false;
+            }
+
             return crypted;
         }
 
@@ -187,6 +187,12 @@ namespace Cryptography.RandomJumpMap
             {
                 var mapKey = getMapKey(charArray.Length, i, password);
                 decrypted += (char)getReverseJumpChar(mapKey, charArray[i]);
+            }
+
+            if (Modified)
+            {
+                callSaveMethod();
+                Modified = false;
             }
 
             return decrypted;

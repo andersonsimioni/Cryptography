@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cryptography\Cryptography.csproj" />
+    <ProjectReference Include="..\Cryptography.NET\Cryptography.NET.csproj" />
   </ItemGroup>
 
 </Project>
