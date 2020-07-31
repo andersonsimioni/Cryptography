@@ -1,0 +1,9 @@
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\obj\Debug\Cryptography.NET.csprojAssemblyReference.cache
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\obj\Debug\Cryptography.NET.csproj.CoreCompileInputs.cache
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\bin\Debug\Cryptography.NET.dll
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\bin\Debug\Cryptography.NET.pdb
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\obj\Debug\Cryptography.NET.csproj.CopyComplete
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\obj\Debug\Cryptography.NET.dll
+C:\Users\DEBUG\Documents\Projects\Visual Studio 2019\C#\Cryptography\Cryptography.NET\obj\Debug\Cryptography.NET.pdb
